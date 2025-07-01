@@ -115,7 +115,7 @@ async function getSignedClaimData({
   const currentBlock = await ethers.provider.getBlock('latest');
 
   const expiry = fullClaim
-    ? currentBlock.timestamp + 2 * 365 * 24 * 60 * 60 // Expiry in 2 years
+    ? currentBlock.timestamp + 2 * 360 * 24 * 60 * 60 // Expiry in 2 years
     : expiryPassed
     ? currentBlock.timestamp - 60 // Expired 1 minute ago for preclaim
     : currentBlock.timestamp + 900; // Valid for the next 15 minutes for preclaim

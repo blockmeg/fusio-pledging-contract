@@ -6,7 +6,7 @@ const { anyValue } = require("@nomicfoundation/hardhat-chai-matchers/withArgs");
 
 describe("FusioPledge: pledge()", () => {
   let fusioPledge, token, owner, addr1, addr2;
-  const interval = 365;
+  const interval = 360;
   const amount = ethers.parseEther("10", 18);
 
   beforeEach(async () => {

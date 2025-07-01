@@ -5,7 +5,7 @@ const fastForwardEpochs = async (epochs = 1, options = {}) => {
   if (options.customDays) {
     totalSeconds = options.customDays * dayInSeconds;
   } else if (options.is12thMonth) {
-    totalSeconds = 365 * dayInSeconds;
+    totalSeconds = 360 * dayInSeconds;
   } else {
     totalSeconds = 30 * dayInSeconds * epochs;
   }

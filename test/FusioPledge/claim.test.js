@@ -7,7 +7,7 @@ const { anyValue } = require("@nomicfoundation/hardhat-chai-matchers/withArgs");
 
 describe("FusioPledge: claimRewards()", () => {
   let fusioPledge, token, owner, addr1, addr2;
-  const interval = 365;
+  const interval = 360;
   const amount = ethers.parseEther("10");
 	let pledgeId;
 
@@ -425,7 +425,7 @@ describe("FusioPledge: claimRewards()", () => {
       fullClaim: true // This ensures the signature expires in 2 years
     });
   
-    await network.provider.send("evm_increaseTime", [(2 * 365 * 24 * 60 * 60)]);
+    await network.provider.send("evm_increaseTime", [(2 * 360 * 24 * 60 * 60)]);
     await network.provider.send("evm_mine");
   
     await expect(

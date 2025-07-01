@@ -53,7 +53,7 @@ contract FusioPledge is Initializable, EIP712Upgradeable, OwnableUpgradeable, Re
     );
     uint256 private constant MIN_INTERVAL = 30; //1 month
     uint256 private constant MAX_APR = 30000; // 300% in BPS (Basis Points)
-    uint256 private constant ONE_YEAR = 365 days;
+    uint256 private constant ONE_YEAR = 360 days;
     uint256 private constant BPS_DENOMINATOR = 10000;
     uint256 private constant MONTHS_IN_YEAR = 12;
 
@@ -424,7 +424,7 @@ contract FusioPledge is Initializable, EIP712Upgradeable, OwnableUpgradeable, Re
     ) public pure returns (uint256) {
         return (_amount * _apr * _duration) / (ONE_YEAR * BPS_DENOMINATOR);
     }
-
+    
     /**
      * @notice Helper function to calculate the monthly rewards for a user based on their pledge amount and monthly APR.
      * @param _amount The amount of tokens the user pledged.
